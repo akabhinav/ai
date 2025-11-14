@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.worldclass.ai</groupId>
+        <artifactId>worldclass-ai-sdk</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>ai-sdk-observability</artifactId>
+    <name>AI SDK Observability</name>
+    <description>OpenTelemetry Integration, Custom Metrics</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.worldclass.ai</groupId>
+            <artifactId>ai-sdk-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- OpenTelemetry -->
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-api</artifactId>
+            <version>${opentelemetry.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-sdk</artifactId>
+            <version>${opentelemetry.version}</version>
+        </dependency>
+
+        <!-- Micrometer -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-core</artifactId>
+            <version>${micrometer.version}</version>
+        </dependency>
+    </dependencies>
+</project>

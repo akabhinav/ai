@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.worldclass.ai</groupId>
+        <artifactId>worldclass-ai-sdk</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>ai-sdk-spring-boot-starter</artifactId>
+    <name>AI SDK Spring Boot Starter</name>
+    <description>Feature #41: Spring Boot Starter - Zero-config integration, working in 30 seconds</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.worldclass.ai</groupId>
+            <artifactId>ai-sdk-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.worldclass.ai</groupId>
+            <artifactId>ai-sdk-optimization</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.worldclass.ai</groupId>
+            <artifactId>ai-sdk-security</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.worldclass.ai</groupId>
+            <artifactId>ai-sdk-rag</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

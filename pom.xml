@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.worldclass.ai</groupId>
+    <artifactId>worldclass-ai-sdk</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>WorldClass AI SDK</name>
+    <description>World-class Java SDK for AI/LLM applications with 50+ enterprise features</description>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Spring Boot -->
+        <spring-boot.version>3.2.0</spring-boot.version>
+
+        <!-- Libraries -->
+        <lombok.version>1.18.30</lombok.version>
+        <jackson.version>2.16.0</jackson.version>
+        <okhttp.version>4.12.0</okhttp.version>
+        <reactor.version>3.6.0</reactor.version>
+        <micrometer.version>1.12.0</micrometer.version>
+        <opentelemetry.version>1.33.0</opentelemetry.version>
+        <resilience4j.version>2.2.0</resilience4j.version>
+        <caffeine.version>3.1.8</caffeine.version>
+        <lucene.version>9.9.0</lucene.version>
+        <bouncycastle.version>1.77</bouncycastle.version>
+
+        <!-- Testing -->
+        <junit.version>5.10.1</junit.version>
+        <mockito.version>5.8.0</mockito.version>
+        <testcontainers.version>1.19.3</testcontainers.version>
+    </properties>
+
+    <modules>
+        <module>ai-sdk-core</module>
+        <module>ai-sdk-optimization</module>
+        <module>ai-sdk-security</module>
+        <module>ai-sdk-rag</module>
+        <module>ai-sdk-enterprise</module>
+        <module>ai-sdk-observability</module>
+        <module>ai-sdk-spring-boot-starter</module>
+        <module>ai-sdk-cli</module>
+        <module>ai-sdk-examples</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot BOM -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- HTTP Client -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <!-- Reactive -->
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-core</artifactId>
+                <version>${reactor.version}</version>
+            </dependency>
+
+            <!-- Resilience -->
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-bom</artifactId>
+                <version>${resilience4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Caching -->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+            <!-- Testing -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.worldclass.ai</groupId>
+        <artifactId>worldclass-ai-sdk</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>ai-sdk-rag</artifactId>
+    <name>AI SDK RAG</name>
+    <description>RAG Engine, Smart Chunking, Hybrid Search, Re-Ranking</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.worldclass.ai</groupId>
+            <artifactId>ai-sdk-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Lucene for search -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>${lucene.version}</version>
+        </dependency>
+    </dependencies>
+</project>
